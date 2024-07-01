@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>DOM Class Modification</title>
+    <style>
+        .btn-rounded {
+            border-radius: 20px;
+            background-color: tomato;
+        }
+        .btn-square {
+            background-color: orange;
+            border-radius: 0;
+        }
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            color: white;
+        }
+        .theme-icon {
+            height: 30px;
+            width: 30px;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 5px;
+            background-color: white;
+        }
+        .active {
+            border: 1px solid;
+        }
+        .theme-light {
+            background-color: aliceblue;
+            color: black;
+        }
+        .theme-dark {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body id="body" class="theme-light">
+    <div>
+        <img src="moon-2.png" alt="light" class="theme-icon" id="imglight" onclick="lightmode()">
+        <img src="moon.png" alt="dark" class="theme-icon" id="imgdark" onclick="darkmode()">
+    </div>
+    <h1>This is Light / Dark mode theme changer</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto facilis ipsa nam, repellendus magnam sed omnis at ea quae maiores illo dolores pariatur iste fugit! Recusandae, minima. Quae, nisi dignissimos!</p>
+    <button class="btn btn-rounded" id="fance-button">
+        I am Box
+    </button>
+    <script>
+        function darkmode() {
+            const imgdark = document.getElementById('imgdark');
+            imgdark.classList.add('active');
+            const imglight = document.getElementById('imglight');
+            imglight.classList.remove('active');
+            const body = document.getElementById("body");
+            body.className = "theme-dark";
+        }
+        function lightmode() {
+            const imgdark = document.getElementById('imgdark');
+            imgdark.classList.remove('active');
+            const imglight = document.getElementById('imglight');
+            imglight.classList.add('active');
+            const body = document.getElementById("body");
+            body.className = "theme-light";
+        }
+    </script>
+</body>
+</html>
